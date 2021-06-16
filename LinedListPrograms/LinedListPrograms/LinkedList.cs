@@ -37,5 +37,23 @@ namespace LinedListPrograms
                 Console.Write(n.value + "\n");
             }
         }
+        public void Append(int value)
+        {
+            Node node = new Node(value);
+            if(head == null)
+            {
+                head = node;
+            }
+            else
+            {
+                Node n = head;
+                while (node.next != null)
+                {
+                    n = n.next;
+                }
+                n.next = node;
+            }
+
+        }
     }
 }
