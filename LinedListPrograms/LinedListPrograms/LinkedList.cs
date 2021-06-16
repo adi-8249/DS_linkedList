@@ -6,6 +6,7 @@ namespace LinedListPrograms
 {
     class LinkedList
     {
+
         Node head;
         public void Add(int value)
         {
@@ -20,7 +21,7 @@ namespace LinedListPrograms
                 head = node;
             }
         }
-        public void Display()
+        public void Display() // displaying the value
         {
             if (head == null)
             {
@@ -37,7 +38,7 @@ namespace LinedListPrograms
                 Console.Write(n.value + "\n");
             }
         }
-        public void Append(int value)
+        public void Append(int value) //adding new element
         {
             Node node = new Node(value);
             if(head == null)
@@ -53,7 +54,34 @@ namespace LinedListPrograms
                 }
                 n.next = node;
             }
-
+        }
+        public void InsertInPosition(int position, int value) //
+        {
+            Node node = new Node(value);
+            if (position == 0) //when position is 0
+            {
+                Console.WriteLine("Invalid Position");
+            }
+            else if (position == 1)
+            {
+                node.next = head;
+                head = node;
+            }
+            else
+            {
+                Node n = head, Prev = head, after;
+                for (int i = 1; i < position; i++)
+                {
+                    n = n.next;
+                    if (i == position - 2)
+                    {
+                        Prev = n;
+                    }
+                }
+                after = n;
+                Prev.next = node;
+                node.next = after;
+            }
         }
     }
 }

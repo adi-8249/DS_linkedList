@@ -17,6 +17,9 @@ namespace LinedListPrograms
             linkedList.Append(30);
             linkedList.Append(70);
             linkedList.Display();
+
+            linkedList.InsertInPosition(2,30);
+            linkedList.Display();
         }
     }
 }
