@@ -20,6 +20,8 @@ namespace LinedListPrograms
 
             linkedList.InsertInPosition(2,30);
             linkedList.Display();
+            Console.WriteLine("Popped first element " + linkedList.Pop().value);
+
         }
     }
 }

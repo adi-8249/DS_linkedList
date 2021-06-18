@@ -21,7 +21,7 @@ namespace LinedListPrograms
                 head = node;
             }
         }
-        public void Display() // displaying the value
+        public void Display() 
         {
             if (head == null)
             {
@@ -38,10 +38,10 @@ namespace LinedListPrograms
                 Console.Write(n.value + "\n");
             }
         }
-        public void Append(int value) //adding new element
+        public void Append(int value) 
         {
             Node node = new Node(value);
-            if(head == null)
+            if (head == null)
             {
                 head = node;
             }
@@ -55,7 +55,7 @@ namespace LinedListPrograms
                 n.next = node;
             }
         }
-        public void InsertInPosition(int position, int value) //
+        public void InsertInPosition(int position, int value)
         {
             Node node = new Node(value);
             if (position == 0) //when position is 0
@@ -82,6 +82,19 @@ namespace LinedListPrograms
                 Prev.next = node;
                 node.next = after;
             }
+        }
+        public Node Pop()
+        {
+            Node n = head;
+            if (head == null)
+            {
+                Console.WriteLine("List is Empty");
+            }
+            else
+            {
+                head = head.next;
+            }
+            return n;
         }
     }
 }
