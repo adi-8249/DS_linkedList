@@ -19,8 +19,15 @@ namespace LinedListPrograms
             linkedList.Display();
 
             linkedList.InsertInPosition(2,30);
-            linkedList.Display();
+
             Console.WriteLine("Popped first element " + linkedList.Pop().value);
+
+            linkedList.Append(56);
+            linkedList.Append(30);
+            linkedList.Append(70);
+            linkedList.Display();
+            Console.WriteLine("Popped last element " + linkedList.PopLast().value);
+            linkedList.Display();
 
         }
     }

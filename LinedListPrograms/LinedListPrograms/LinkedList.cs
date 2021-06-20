@@ -83,10 +83,10 @@ namespace LinedListPrograms
                 node.next = after;
             }
         }
-        public Node Pop()
+        public Node Pop() //removing the given number from list
         {
             Node n = head;
-            if (head == null)
+            if (head == null) //cheking for head is null
             {
                 Console.WriteLine("List is Empty");
             }
@@ -95,6 +95,25 @@ namespace LinedListPrograms
                 head = head.next;
             }
             return n;
+        }
+        public Node PopLast()
+        {
+            if (head == null)
+            {
+                Console.WriteLine("List is Empty.");
+                return null;
+            }
+            else
+            {
+                Node n = head;
+                while (n.next.next != null)
+                {
+                    n = n.next;
+                }
+                Node removedNode = n.next;
+                n.next = null;
+                return removedNode;
+            }
         }
     }
 }
