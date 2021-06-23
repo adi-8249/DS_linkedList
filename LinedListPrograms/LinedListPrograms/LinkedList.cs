@@ -4,7 +4,7 @@ using System.Text;
 
 namespace LinedListPrograms
 {
-    class LinkedList
+    public class LinkedList
     {
 
         Node head;
@@ -96,7 +96,7 @@ namespace LinedListPrograms
             }
             return n;
         }
-        public Node PopLast()
+        public Node PopLast()//Removing element from last of list
         {
             if (head == null)
             {
@@ -114,6 +114,23 @@ namespace LinedListPrograms
                 n.next = null;
                 return removedNode;
             }
+        }
+        /// <summary>
+        /// searching for the specific value
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public Node Search(int value)
+        {
+            while (this.head != null)
+            {
+                if (this.head.value == value)
+                {
+                    return this.head;
+                }
+                this.head = this.head.next;
+            }
+            return null;
         }
     }
 }
