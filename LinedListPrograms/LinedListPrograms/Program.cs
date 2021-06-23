@@ -44,6 +44,11 @@ namespace LinedListPrograms
             linkedList.DeleteElement(40);
             linkedList.Display();
             Console.WriteLine( "The Size of Linked List is: " + linkedList.ShowSize());
+            //sorting the list in the given list
+            linkedList.SortLinkedList(56);
+            linkedList.SortLinkedList(40);
+            linkedList.SortLinkedList(70);
+            linkedList.Display();
         }
     }
 }

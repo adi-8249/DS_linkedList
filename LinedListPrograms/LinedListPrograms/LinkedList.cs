@@ -6,11 +6,13 @@ namespace LinedListPrograms
 {
     public class LinkedList
     {
-
+        /// <summary>
+        /// UC-1_Adding the number 
+        /// </summary>
         Node head;
         public void Add(int value)
         {
-            Node node = new Node(value);
+            Node node = new Node(value); //Node is class type 
             if (head == null)
             {
                 head = node;
@@ -21,7 +23,10 @@ namespace LinedListPrograms
                 head = node;
             }
         }
-        public void Display() 
+        /// <summary>
+        /// Using Display method displaing the result
+        /// </summary>
+        public void Display()
         {
             if (head == null)
             {
@@ -38,6 +43,10 @@ namespace LinedListPrograms
                 Console.Write(n.value + "\n");
             }
         }
+        /// <summary>
+        /// Appending is same as add method
+        /// </summary>
+        /// <param name="value"></param>
         public void Append(int value) 
         {
             Node node = new Node(value);
@@ -55,6 +64,11 @@ namespace LinedListPrograms
                 n.next = node;
             }
         }
+        /// <summary>
+        /// inserting the Element in the given position
+        /// </summary>
+        /// <param name="position"></param>
+        /// <param name="value"></param>
         public void InsertInPosition(int position, int value)
         {
             Node node = new Node(value);
@@ -83,6 +97,10 @@ namespace LinedListPrograms
                 node.next = after;
             }
         }
+        /// <summary>
+        /// Pop method uses for removing the element from list
+        /// </summary>
+        /// <returns></returns>
         public Node Pop() //removing the given number from list
         {
             Node n = head;
@@ -96,6 +114,10 @@ namespace LinedListPrograms
             }
             return n;
         }
+        /// <summary>
+        /// The Pop last method uses to remove the element from last 
+        /// </summary>
+        /// <returns></returns>
         public Node PopLast()//Removing element from last of list
         {
             if (head == null)
@@ -170,5 +192,31 @@ namespace LinedListPrograms
             }
             return size;
         }
+        /// <summary>
+        /// Orderlinked list in ascending order
+        /// </summary>
+        /// <param name="data"></param>
+        public void SortLinkedList(int value)
+        {
+            Node newNode = new Node(value);
+            Node current;
+            if (head == null || head.value >= newNode.value)
+            {
+                newNode.next = head;
+                head = newNode;
+            }
+            else
+            {
+                current = head;
+                while (current.next != null && current.next.value < newNode.value)
+                {
+                    current = current.next;
+                }
+                newNode.next = current.next;
+                current.next = newNode;
+            }
+            Console.WriteLine("{0} Inserted Element", value);
+        }
+
     }
 }
