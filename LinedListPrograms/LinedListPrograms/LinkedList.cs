@@ -132,5 +132,43 @@ namespace LinedListPrograms
             }
             return null;
         }
+        /// <summary>
+        /// Deleting element 40 from list
+        /// </summary>
+        /// <param name="value"></param>
+        public void DeleteElement(int value)
+        {
+            Node temp = head, prev = null;
+            if (temp != null && temp.value == value)
+            {
+                head = temp.next;
+                return;
+            }
+            while (temp != null && temp.value != value)
+            {
+                prev = temp;
+                temp = temp.next;
+            }
+            if (temp == null)
+                return;
+
+            prev.next = temp.next;
+            Console.WriteLine("{0} Element is Deleted", value);
+        }
+        /// <summary>
+        /// showing the size 
+        /// </summary>
+        /// <returns></returns>
+        public int ShowSize()
+        {
+            Node temp = head;
+            int size = 0;
+            while (temp != null)
+            {
+                size++;
+                temp = temp.next;
+            }
+            return size;
+        }
     }
 }

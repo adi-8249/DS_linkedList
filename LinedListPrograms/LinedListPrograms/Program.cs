@@ -40,6 +40,10 @@ namespace LinedListPrograms
             //Inserting the value 40 in the second position
             linkedList.InsertInPosition(2, 40);
             linkedList.Display();
+            //deleteing the element from list and shows size
+            linkedList.DeleteElement(40);
+            linkedList.Display();
+            Console.WriteLine( "The Size of Linked List is: " + linkedList.ShowSize());
         }
     }
 }

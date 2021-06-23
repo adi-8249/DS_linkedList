@@ -35,5 +35,19 @@ namespace TestCaseLinkedList.Test
             //Act
             Assert.AreEqual(40, node.value);
         }
+        [Test]
+        public void DeleteElement()
+        {
+            //Arrange
+            list.Add(56);
+            list.Add(30);
+            list.Add(70);
+            //Assert
+            list.InsertInPosition(2, 40);
+            list.DeleteElement(40);
+            int size = list.ShowSize();
+            //Act
+            Assert.AreEqual(3, size);
+        }
     }
 }
