@@ -22,5 +22,18 @@ namespace TestCaseLinkedList.Test
             Assert.AreEqual(30, node.value);
             Assert.Pass();
         }
+        [Test]
+        public void InsertNodeAfterTheNode()
+        {
+            //Arrange
+            list.Add(56);
+            list.Add(30);
+            list.Add(70);
+            //Assert
+            list.InsertInPosition(2, 40);
+            Node node = list.Search(40);
+            //Act
+            Assert.AreEqual(40, node.value);
+        }
     }
 }

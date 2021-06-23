@@ -37,7 +37,9 @@ namespace LinedListPrograms
             //using search method finding the element from list
             linkedList.Search(30);
             linkedList.Display();
-
+            //Inserting the value 40 in the second position
+            linkedList.InsertInPosition(2, 40);
+            linkedList.Display();
         }
     }
 }
